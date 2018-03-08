@@ -12,7 +12,7 @@ export class UserFormComponent {
   @Output() onCreate: EventEmitter<User> = new EventEmitter<User>();
 
   onSubmitUserForm() {
-    this.onCreate.emit(this.user);
+    this.onCreate.emit(Object.assign({}, this.user));
   }
 
 }
