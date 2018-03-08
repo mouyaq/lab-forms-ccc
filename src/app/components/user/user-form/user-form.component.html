@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmitUserForm()" #userForm="ngForm">
+
+  <div>
+      <label for="name">Name: </label>
+      <input type="text" name="name" autocomplete="username" [(ngModel)]="user.name" required minlength="3">
+  </div>
+
+  <div>
+      <label for="password">Password: </label>
+      <input type="password" name="password" autocomplete="current-password" [(ngModel)]="user.password" required minlength="6">
+  </div>
+
+  <div>
+      <label for="email">Email: </label>
+      <input type="email" name="email" autocomplete="email" [(ngModel)]="user.email" required>
+  </div>
+
+  <div>
+      <label for="birthday">Birthday: </label>
+      <input type="date" name="bithday" [(ngModel)]="user.birthday" required>
+  </div>
+
+  <input type="avatar" hidden>
+
+  <div>
+      <button type="submit" [disabled]="!userForm.valid">Create User</button>
+  </div>
+
+</form>
